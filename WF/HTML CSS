@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watson Finish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base Styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    header {
+      background: url('your-hero-image.jpg') no-repeat center center/cover;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    header img {
+      width: 150px;
+      z-index: 2;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-top: 20px;
+      z-index: 2;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+      z-index: 2;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #66ccff;
+      color: #fff;
+      border-radius: 5px;
+      margin-top: 20px;
+      z-index: 2;
+      position: relative;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .service {
+      flex: 1 1 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .contact-info {
+      text-align: center;
+    }
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    footer {
+      background-color: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    iframe {
+      border: none;
+      width: 100%;
+      height: 700px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .services { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="your-logo.png" alt="Watson Finish Logo">
+    <h1>Professional Detailing with a Personal Touch</h1>
+    <p>Your car deserves the Watson Finish.</p>
+    <a href="https://calendly.com/watsonfinish" target="_blank" class="btn">Book Now</a>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Watson Finish is dedicated to providing top-notch detailing services with precision and care. Our passion for cars drives us to deliver exceptional results every time.</p>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Exterior Wash & Wax</h3>
+        <p>Restore your car's shine with our thorough exterior cleaning and waxing.</p>
+      </div>
+      <div class="service">
+        <h3>Interior Deep Clean</h3>
+        <p>Comprehensive interior cleaning to make your car feel brand new.</p>
+      </div>
+      <div class="service">
+        <h3>Paint Correction</h3>
+        <p>Eliminate imperfections and enhance your car's paintwork.</p>
+      </div>
+      <div class="service">
+        <h3>Ceramic Coating</h3>
+        <p>Long-lasting protection to keep your car looking pristine.</p>
+      </div>
+      <div class="service">
+        <h3>Engine Bay Detailing</h3>
+        <p>Detailed cleaning of your engine bay for a spotless finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section id="booking">
+    <h2>Schedule a Detail</h2>
+    <iframe src="https://calendly.com/watsonfinish"></iframe>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:watsonfinish@gmail.com">watsonfinish@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/watsonfinish" target="_blank">@watsonfinish</a></p>
+      <p>Facebook: <a href="https://facebook.com/WatsonFinish" target="_blank">Watson Finish</a></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Watson Finish. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
