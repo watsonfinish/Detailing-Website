@@ -6,22 +6,22 @@
   <title>Watson Finish | Premium Mobile Detailing</title>
   <meta
     name="description"
-    content="Watson Finish offers premium mobile detailing with a classic modern feel. Call or text for a free quote today."
+    content="Watson Finish provides premium mobile detailing with modern convenience and a clean professional finish. Call or text for a quote today."
   />
+
   <style>
     :root {
-      --bg: #080a0f;
-      --bg-soft: #10141d;
-      --panel: rgba(255, 255, 255, 0.04);
-      --panel-border: rgba(255, 255, 255, 0.08);
-      --text: #f5f7fb;
-      --muted: #b7c0d4;
-      --blue: #7cb4ff;
-      --blue-strong: #4d8fff;
-      --red: #c63a3a;
-      --red-soft: rgba(198, 58, 58, 0.18);
-      --line: rgba(255, 255, 255, 0.08);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --bg: #06080d;
+      --bg-2: #0b1220;
+      --panel: rgba(255, 255, 255, 0.05);
+      --panel-2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: #f5f8ff;
+      --muted: #b7c4dc;
+      --blue: #176bff;
+      --blue-2: #4a97ff;
+      --blue-soft: rgba(23, 107, 255, 0.16);
+      --shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
       --radius: 22px;
       --max: 1180px;
     }
@@ -39,9 +39,8 @@
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(124, 180, 255, 0.12), transparent 24%),
-        radial-gradient(circle at top right, rgba(198, 58, 58, 0.12), transparent 22%),
-        linear-gradient(180deg, #07090d 0%, #0b0f16 100%);
+        radial-gradient(circle at top left, rgba(23, 107, 255, 0.14), transparent 22%),
+        linear-gradient(180deg, #05070b 0%, #09111e 38%, #06080d 100%);
       line-height: 1.6;
     }
 
@@ -63,14 +62,14 @@
     .nav {
       position: sticky;
       top: 0;
-      z-index: 999;
-      background: rgba(8, 10, 15, 0.84);
+      z-index: 1000;
+      background: rgba(6, 8, 13, 0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .nav-inner {
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -80,61 +79,127 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background:
-        linear-gradient(135deg, rgba(124, 180, 255, 0.2), rgba(198, 58, 58, 0.14)),
-        rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--panel-border);
-      display: grid;
-      place-items: center;
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
       box-shadow: var(--shadow);
-      color: var(--blue);
-      font-weight: 900;
+      flex-shrink: 0;
     }
 
-    .menu {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
     }
 
-    .menu a {
+    .brand-text strong {
+      display: block;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand-text span {
+      display: block;
       color: var(--muted);
-      font-size: 0.96rem;
+      font-size: 0.82rem;
     }
 
-    .menu a:hover {
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
       color: var(--text);
     }
 
-    .hero {
-      padding: 72px 0 36px;
+    .nav-cta {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: white;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 0 18px;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--muted);
+      font-weight: 700;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(4, 7, 12, 0.58), rgba(4, 7, 12, 0.84)),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(23,107,255,0.10), transparent 34%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 90px 0 70px;
     }
 
     .eyebrow {
       display: inline-block;
-      color: var(--blue);
+      margin-bottom: 14px;
+      color: #99beff;
       text-transform: uppercase;
       letter-spacing: 0.18em;
       font-size: 0.82rem;
       font-weight: 800;
-      margin-bottom: 14px;
     }
 
     h1, h2, h3 {
@@ -143,73 +208,30 @@
     }
 
     h1 {
-      font-size: clamp(2.7rem, 6vw, 4.9rem);
+      font-size: clamp(2.9rem, 8vw, 5.8rem);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      max-width: 9ch;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4vw, 3.1rem);
     }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 1.22rem;
+    }
+
+    .hero-sub {
+      font-size: clamp(1.5rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 18px;
     }
 
     .lead {
+      max-width: 58ch;
       color: var(--muted);
       font-size: 1.08rem;
-      max-width: 60ch;
-    }
-
-    .hero-card,
-    .card,
-    .service-card,
-    .review-card,
-    .cta-band,
-    .contact-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
-      border: 1px solid var(--panel-border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card {
-      padding: 26px;
-    }
-
-    .logo-box {
-      aspect-ratio: 1 / 1;
-      min-height: 420px;
-      display: grid;
-      place-items: center;
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at center, rgba(124, 180, 255, 0.12), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border: 1px solid var(--panel-border);
-      padding: 24px;
-      text-align: center;
-    }
-
-    .logo-wordmark {
-      font-size: clamp(2.8rem, 7vw, 5rem);
-      font-weight: 900;
-      letter-spacing: 0.08em;
-      color: var(--blue);
-      text-shadow: 0 0 24px rgba(124, 180, 255, 0.18);
-    }
-
-    .logo-sub {
-      font-size: clamp(1rem, 2vw, 1.5rem);
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: #dce7ff;
-      margin-top: 12px;
-    }
-
-    .logo-car {
-      margin-top: 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
     }
 
     .hero-actions,
@@ -217,19 +239,18 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 26px;
     }
 
     .btn {
-      min-height: 50px;
+      min-height: 52px;
       padding: 0 22px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--panel-border);
       font-weight: 800;
-      cursor: pointer;
+      border: 1px solid var(--border);
       transition: 0.2s ease;
     }
 
@@ -238,17 +259,18 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--blue-strong), var(--blue));
-      color: #07101c;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      box-shadow: 0 10px 28px rgba(23,107,255,0.25);
     }
 
-    .btn-secondary {
+    .btn-dark {
+      background: rgba(0,0,0,0.45);
+      color: white;
+    }
+
+    .btn-light {
       background: transparent;
-      color: var(--text);
-    }
-
-    .btn-danger {
-      background: linear-gradient(135deg, #aa2f2f, var(--red));
       color: white;
     }
 
@@ -262,38 +284,18 @@
     .tag {
       padding: 8px 12px;
       border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      color: #d9e6ff;
       font-size: 0.92rem;
-      color: var(--muted);
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--panel-border);
-    }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--panel-border);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.3rem;
-      margin-bottom: 4px;
     }
 
     section {
-      padding: 34px 0;
+      padding: 72px 0;
     }
 
     .section-head {
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .section-copy {
@@ -301,117 +303,131 @@
       max-width: 64ch;
     }
 
-    .grid-3 {
+    .card,
+    .service-card,
+    .addon-card,
+    .review-card,
+    .contact-card,
+    .info-card,
+    .popup-box,
+    .cta-band {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .about-grid,
+    .contact-grid,
+    .service-grid,
+    .addon-grid,
+    .review-grid,
+    .info-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
-    .grid-2 {
-      display: grid;
+    .about-grid,
+    .contact-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
     }
 
-    .service-card {
-      padding: 22px;
+    .service-grid,
+    .addon-grid,
+    .review-grid,
+    .info-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
 
-    .service-badge {
-      display: inline-block;
+    .card,
+    .contact-card,
+    .service-card,
+    .addon-card,
+    .review-card,
+    .info-card {
+      padding: 24px;
+    }
+
+    .card p,
+    .contact-card p,
+    .service-card p,
+    .addon-card p,
+    .review-card p,
+    .info-card p {
+      color: var(--muted);
+    }
+
+    .info-card,
+    .service-card,
+    .addon-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .info-card::before,
+    .service-card::before,
+    .addon-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-2));
+    }
+
+    .service-badge,
+    .price-badge {
+      display: inline-flex;
+      align-items: center;
       padding: 8px 12px;
       border-radius: 999px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       font-weight: 800;
-      color: var(--blue);
-      background: rgba(124, 180, 255, 0.1);
-      border: 1px solid rgba(124, 180, 255, 0.22);
       margin-bottom: 14px;
     }
 
-    .service-card p,
-    .review-card p,
-    .card p,
-    .contact-card p {
-      color: var(--muted);
+    .service-badge {
+      color: #a7c8ff;
+      background: var(--blue-soft);
+      border: 1px solid rgba(23,107,255,0.24);
     }
 
-    .service-card ul,
-    .contact-card ul {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .service-card li,
-    .contact-card li {
-      margin: 8px 0;
+    .price-badge {
+      color: white;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .best-value {
-      outline: 2px solid rgba(124, 180, 255, 0.28);
-      position: relative;
+      outline: 2px solid rgba(23,107,255,0.34);
     }
 
-    .best-value::before {
+    .best-value::after {
       content: "Best Value";
       position: absolute;
       top: 16px;
       right: 16px;
-      font-size: 0.76rem;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      color: white;
+      font-size: 0.74rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: white;
-      background: linear-gradient(135deg, var(--blue-strong), var(--blue));
-      padding: 8px 10px;
-      border-radius: 999px;
     }
 
-    .split-card {
-      padding: 26px;
-    }
-
-    .quote-block {
-      font-size: 1.14rem;
+    .feature-list {
+      margin: 16px 0 0;
+      padding-left: 18px;
       color: var(--muted);
     }
 
-    .quote-block strong {
-      display: block;
-      margin-top: 14px;
-      color: var(--text);
-    }
-
-    .review-card {
-      padding: 22px;
-    }
-
-    .stars {
-      color: #ffd976;
-      letter-spacing: 0.12em;
-      margin-bottom: 10px;
-      font-weight: 900;
-    }
-
-    .cta-band {
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .contact-card {
-      padding: 22px;
+    .feature-list li {
+      margin: 10px 0;
     }
 
     .contact-list {
@@ -422,7 +438,7 @@
 
     .contact-list li {
       padding: 10px 0;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
     }
 
@@ -431,17 +447,44 @@
     }
 
     .contact-list a {
-      color: var(--blue);
+      color: #8ab8ff;
+    }
+
+    .stars {
+      color: #ffe28b;
+      letter-spacing: 0.12em;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .cta-band {
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 26px;
+    }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .footer {
-      padding: 34px 0 54px;
+      padding: 42px 0 50px;
       color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.8fr 0.8fr;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
       gap: 20px;
     }
 
@@ -455,27 +498,163 @@
       margin: 8px 0;
     }
 
-    .notice {
-      margin-top: 16px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: var(--red-soft);
-      border: 1px solid rgba(198, 58, 58, 0.22);
-      color: #ffd9d9;
-      font-size: 0.95rem;
+    /* Popup */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(3, 7, 12, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 2000;
     }
 
-    @media (max-width: 980px) {
-      .hero-grid,
-      .grid-3,
-      .grid-2,
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-box {
+      width: min(100%, 760px);
+      color: #111827;
+      padding: 22px;
+      position: relative;
+      background:
+        linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.91)),
+        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      border-radius: 26px;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.86);
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .popup-inner {
+      padding: 24px 12px 8px;
+      text-align: center;
+    }
+
+    .popup-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+
+    .popup-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 22px 0;
+    }
+
+    .popup-gallery img {
+      width: 100%;
+      aspect-ratio: 1 / 0.8;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .popup-copy {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 22px;
+    }
+
+    .popup-copy a {
+      color: var(--blue);
+      font-weight: 900;
+    }
+
+    .popup-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .popup-btn {
+      min-height: 58px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .popup-btn-dark {
+      background: #000;
+      color: #fff;
+    }
+
+    .popup-btn-gray {
+      background: #666d79;
+      color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .about-grid,
       .contact-grid,
+      .service-grid,
+      .addon-grid,
+      .review-grid,
+      .info-grid,
       .footer-grid {
         grid-template-columns: 1fr;
       }
+    }
 
-      .stats {
-        grid-template-columns: 1fr;
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .hero {
+        min-height: 74vh;
+      }
+
+      .hero-content {
+        padding: 84px 0 64px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 58px 0;
+      }
+
+      .hero-actions,
+      .inline-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
       }
 
       .cta-band {
@@ -483,185 +662,322 @@
         align-items: flex-start;
       }
 
-      .logo-box {
-        min-height: 300px;
-      }
-
-      .menu {
-        display: none;
+      .popup-gallery {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#home" class="brand">
-        <div class="brand-mark">W</div>
-        <span>Watson Finish</span>
+        <div class="brand-logo">
+          <!-- Replace logo.png with your actual WatsonFinish logo -->
+          <img src="logo.png" alt="Watson Finish logo" />
+        </div>
+        <div class="brand-text">
+          <strong>Watson Finish</strong>
+          <span>Premium Mobile Detailing</span>
+        </div>
       </a>
 
-      <div class="menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
+      <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#packages">Packages</a>
+        <a href="#addons">Add-Ons</a>
+        <a href="#booking">Booking</a>
         <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact" class="nav-cta">Contact</a>
       </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button>
+    </div>
+
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#packages">Packages</a>
+      <a href="#addons">Add-Ons</a>
+      <a href="#booking">Booking</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
   <header class="hero" id="home">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Premium Mobile Detailing</span>
-        <h1>Classic finish.<br>Modern convenience.</h1>
-        <p class="lead">
-          Watson Finish brings premium mobile detailing straight to you.
-          Clean results, simple packages, and a smooth booking experience
-          built around your time.
-        </p>
+    <div class="container hero-content">
+      <span class="eyebrow">Premium Mobile Detailing</span>
+      <h1>Watson Finish</h1>
+      <div class="hero-sub">We come to you.</div>
+      <p class="lead">
+        Watson Finish delivers premium mobile detailing with a clean, professional,
+        modern experience. No shop wait, no unnecessary hassle, just quality service
+        brought right to your location.
+      </p>
 
-        <div class="hero-tags">
-          <span class="tag">Call or Text: (860) 253-2863</span>
-          <span class="tag">WatsonFinish.com</span>
-          <span class="tag">@WatsonFinish on all platforms</span>
-        </div>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="tel:18602532863">Call Now</a>
-          <a class="btn btn-danger" href="sms:18602532863">Text for Quote</a>
-          <a class="btn btn-secondary" href="#services">View Packages</a>
-        </div>
-
-        <div class="stats">
-          <div class="stat">
-            <strong>Mobile</strong>
-            We come to you
-          </div>
-          <div class="stat">
-            <strong>Simple</strong>
-            Easy booking and clear packages
-          </div>
-          <div class="stat">
-            <strong>Clean</strong>
-            Professional finish every time
-          </div>
-        </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:18602532863">Call (860) 253-2863</a>
+        <a class="btn btn-dark" href="sms:18602532863">Text For Quote</a>
+        <a class="btn btn-light" href="#booking">View Booking Page</a>
       </div>
 
-      <div class="hero-card">
-        <div class="logo-box">
-          <div>
-            <div class="logo-wordmark">WATSON</div>
-            <div class="logo-sub">FINISH</div>
-            <div class="logo-car">Premium mobile detailing • clean, bold, classic</div>
-          </div>
-        </div>
+      <div class="hero-tags">
+        <span class="tag">Mobile Service</span>
+        <span class="tag">Interior + Exterior</span>
+        <span class="tag">Simple Packages</span>
+        <span class="tag">Serving Hartford Area</span>
       </div>
     </div>
   </header>
 
-  <section id="services">
+  <section id="about">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Services & Packages</span>
-        <h2>Easy to understand. Easy to sell.</h2>
+        <span class="eyebrow">About Us</span>
+        <h2>Built around convenience, quality, and a stronger finish.</h2>
         <p class="section-copy">
-          Keep the menu simple so customers can make a fast decision.
-          Push the middle or full-detail option when it fits.
+          Watson Finish was built to make car care easier to book and easier to trust.
+          We bring professional detailing directly to your home, job, or preferred location,
+          while keeping the process simple and the results high quality.
         </p>
       </div>
 
-      <div class="grid-3">
-        <article class="service-card">
-          <span class="service-badge">Exterior Refresh</span>
-          <h3>Exterior Refresh</h3>
-          <p>A simple package for routine upkeep and shine.</p>
-          <ul>
-            <li>Exterior Wash & Wax</li>
-            <li>Wheels & Tire Cleaning</li>
-            <li>Tire Shine</li>
-            <li>Window Cleaning</li>
-          </ul>
-          <p><strong>Starting at:</strong> $___</p>
-        </article>
-
-        <article class="service-card">
-          <span class="service-badge">Interior Reset</span>
-          <h3>Interior Reset</h3>
-          <p>A clean interior service that gets the cabin back in shape.</p>
-          <ul>
-            <li>Full Interior Vacuum</li>
-            <li>Wipe Down of Interior</li>
-            <li>Dash & Panel Cleaning</li>
-            <li>Floor Mat Refresh</li>
-          </ul>
-          <p><strong>Starting at:</strong> $___</p>
-        </article>
-
-        <article class="service-card best-value">
-          <span class="service-badge">Full Detail</span>
-          <h3>Full Detail</h3>
-          <p>The best overall package for a real transformation.</p>
-          <ul>
-            <li>Exterior Wash & Wax</li>
-            <li>Interior Vacuum & Wipe Down</li>
-            <li>Wheels & Tire Shine</li>
-            <li>Clay Bar & Seal</li>
-            <li>Final Touch-Up</li>
-          </ul>
-          <p><strong>Starting at:</strong> $___</p>
-        </article>
-      </div>
-
-      <div class="card split-card" style="margin-top:22px;">
-        <h3>Add-Ons</h3>
-        <p>Keep these as upgrades when needed.</p>
-        <div class="grid-3">
-          <div>
-            <p>• Pet Hair Removal</p>
-            <p>• Seat Shampoo</p>
+      <div class="about-grid">
+        <div class="card">
+          <h3>What Watson Finish Is About</h3>
+          <p>
+            We focus on delivering a polished, premium experience from the first message
+            to the final wipe-down. Whether your vehicle needs regular upkeep or a deeper
+            reset, our goal is to improve how it looks, feels, and holds up over time.
+          </p>
+          <div class="note">
+            Replace this paragraph later with your personal story, how you started,
+            and what makes Watson Finish different.
           </div>
-          <div>
-            <p>• Stain Treatment</p>
-            <p>• Odor Treatment</p>
-          </div>
-          <div>
-            <p>• Engine Bay Detail</p>
-            <p>• Deep Crevice Cleaning</p>
+        </div>
+
+        <div class="card">
+          <h3>Why Customers Book Us</h3>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3>Convenient</h3>
+              <p>We come to your location so you save time and skip the shop wait.</p>
+            </div>
+            <div class="info-card">
+              <h3>Professional</h3>
+              <p>Clear service, honest recommendations, and a premium finished look.</p>
+            </div>
+            <div class="info-card">
+              <h3>Practical</h3>
+              <p>Packages built for maintenance, comfort, appearance, and long-term upkeep.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="about">
-    <div class="container grid-2">
-      <div class="card split-card">
-        <span class="eyebrow">About Watson Finish</span>
-        <h2>Built around quality and convenience.</h2>
-        <p>
-          Watson Finish was built to make premium detailing easier to book and
-          easier to trust. No long drop-offs. No wasted time. Just dependable
-          mobile detailing with a clean, professional look from first contact
-          to final finish.
+  <section id="packages">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Packages</span>
+        <h2>Easy packages customers can understand fast.</h2>
+        <p class="section-copy">
+          These are launch-ready example packages with pricing, clear service explanations,
+          and value-focused descriptions. Edit them any time as your business grows.
         </p>
-        <div class="notice">
-          Replace this paragraph later with your real story about how you started,
-          what makes your work different, and why customers should trust you.
-        </div>
       </div>
 
-      <div class="card split-card">
-        <div class="quote-block">
-          “Deliver high-quality mobile detailing that’s simple, reliable, and built around the customer’s time.”
-          <strong>Mission Statement</strong>
+      <div class="service-grid">
+        <article class="service-card">
+          <span class="service-badge">Exterior Refresh</span>
+          <span class="price-badge">Starting at $85</span>
+          <h3>Exterior Refresh</h3>
+          <p>
+            A strong maintenance package for vehicles that need a cleaner look,
+            fresh shine, and routine exterior upkeep without going into a full deep detail.
+          </p>
+          <ul class="feature-list">
+            <li>Hand wash of the full exterior</li>
+            <li>Wheel and tire cleaning</li>
+            <li>Tire shine application</li>
+            <li>Exterior glass cleaning</li>
+            <li>Quick spray protection for gloss and surface enhancement</li>
+            <li>Final wipe-down for a cleaner presentation</li>
+          </ul>
+          <p>
+            <strong>Why this is a good plan for your car:</strong> It helps maintain
+            a clean, presentable exterior, supports paint appearance between deeper services,
+            and is a solid recurring option for regular upkeep.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-badge">Interior Reset</span>
+          <span class="price-badge">Starting at $110</span>
+          <h3>Interior Reset</h3>
+          <p>
+            A deeper interior-focused package for vehicles that need dirt, crumbs,
+            dust, and light buildup cleaned out to make the cabin feel fresher and more comfortable.
+          </p>
+          <ul class="feature-list">
+            <li>Full interior vacuum</li>
+            <li>Wipe down of major interior surfaces</li>
+            <li>Dash, console, and door panel cleaning</li>
+            <li>Interior glass cleaning</li>
+            <li>Floor mat refresh</li>
+            <li>Finishing touch to improve overall cabin appearance</li>
+          </ul>
+          <p>
+            <strong>Why this is a good plan for your car:</strong> It improves day-to-day
+            comfort, keeps the inside looking more cared for, and is great when the cabin
+            needs more than a quick cleanup but not a full premium detail.
+          </p>
+        </article>
+
+        <article class="service-card best-value">
+          <span class="service-badge">Full Detail</span>
+          <span class="price-badge">Starting at $185</span>
+          <h3>Full Detail</h3>
+          <p>
+            This is the best overall package for customers who want the strongest visual
+            improvement and the most complete inside-and-out refresh in one appointment.
+          </p>
+          <ul class="feature-list">
+            <li>Everything included in Exterior Refresh</li>
+            <li>Everything included in Interior Reset</li>
+            <li>Clay bar treatment as needed</li>
+            <li>Sealant or wax protection for extra gloss</li>
+            <li>More complete finishing touch-up</li>
+            <li>Stronger overall transformation in appearance</li>
+          </ul>
+          <p>
+            <strong>Why this is a good plan for your car:</strong> It gives the best value,
+            provides the most noticeable improvement, and works well for vehicles that need
+            a more complete reset rather than light maintenance only.
+          </p>
+        </article>
+      </div>
+
+      <div class="cta-band">
+        <div>
+          <h3>Not sure which package fits your vehicle?</h3>
+          <p style="margin:0;color:var(--muted);">
+            Call or text Watson Finish and get a quick recommendation based on your vehicle condition and goals.
+          </p>
+        </div>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href="tel:18602532863">Call Now</a>
+          <a class="btn btn-dark" href="sms:18602532863">Text For Help</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="addons">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Add-Ons</span>
+        <h2>Extra upgrades for vehicles that need more attention.</h2>
+        <p class="section-copy">
+          These let you keep your core packages simple while still offering higher-ticket options where needed.
+        </p>
+      </div>
+
+      <div class="addon-grid">
+        <article class="addon-card">
+          <span class="price-badge">+$20+</span>
+          <h3>Pet Hair Removal</h3>
+          <p>
+            Extra time and effort focused on seats, carpets, and fabric areas where hair is deeply worked in.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">+$30+</span>
+          <h3>Seat Shampoo</h3>
+          <p>
+            A good add-on for cloth seats that need more than basic surface cleaning to improve appearance.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">+$25+</span>
+          <h3>Stain Treatment</h3>
+          <p>
+            Targeted work on problem spots that need extra attention beyond the normal package service.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">+$25+</span>
+          <h3>Odor Treatment</h3>
+          <p>
+            Helps improve cabin freshness for smells caused by food, smoke, moisture, or general buildup.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">+$40+</span>
+          <h3>Engine Bay Detail</h3>
+          <p>
+            A careful appearance-focused cleaning of the engine bay area for a more complete finished look.
+          </p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">+$25+</span>
+          <h3>Deep Crevice Cleaning</h3>
+          <p>
+            Extra attention to vents, seams, trim edges, cupholders, and other tight spaces where buildup collects.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Booking</span>
+        <h2>Book without the runaround.</h2>
+        <p class="section-copy">
+          Replace the example booking link below with your actual booking page when it is ready.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Fastest Ways To Reach Watson Finish</h3>
+          <ul class="contact-list">
+            <li><strong>Call:</strong> <a href="tel:18602532863">(860) 253-2863</a></li>
+            <li><strong>Text:</strong> <a href="sms:18602532863">(860) 253-2863</a></li>
+            <li><strong>Booking Page:</strong> <a href="https://example.com/booking" target="_blank" rel="noopener">View Booking Page</a></li>
+            <li><strong>Instagram:</strong> <a href="https://instagram.com/watsonfinish" target="_blank" rel="noopener">@WatsonFinish</a></li>
+            <li><strong>Facebook:</strong> <a href="https://facebook.com/" target="_blank" rel="noopener">Add Facebook Link</a></li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:18602532863">Call</a>
+            <a class="btn btn-dark" href="sms:18602532863">Text</a>
+            <a class="btn btn-light" href="https://example.com/booking" target="_blank" rel="noopener">Booking Page</a>
+          </div>
         </div>
 
-        <div class="quote-block" style="margin-top:28px;">
-          “Classic Finish. Modern Convenience.”
-          <strong>Motto</strong>
+        <div class="contact-card">
+          <h3>What To Send When Booking</h3>
+          <ul class="feature-list">
+            <li>Vehicle year, make, and model</li>
+            <li>Interior, exterior, or full detail request</li>
+            <li>Any stains, odor, pet hair, or heavy buildup</li>
+            <li>Your location and preferred appointment time</li>
+            <li>Photos if you want a faster quote</li>
+          </ul>
+
+          <div class="note">
+            You can later replace this card with a real contact form or embedded booking form.
+          </div>
         </div>
       </div>
     </div>
@@ -673,16 +989,15 @@
         <span class="eyebrow">Reviews</span>
         <h2>Make trust easy to see.</h2>
         <p class="section-copy">
-          Add real reviews here as you collect them. Strong reviews close deals faster.
+          Replace these examples with real reviews as they come in.
         </p>
       </div>
 
-      <div class="grid-3">
+      <div class="review-grid">
         <article class="review-card">
           <div class="stars">★★★★★</div>
           <p>
-            Showed up on time, made the car look amazing, and was easy to book.
-            Great attention to detail.
+            Super easy to book and the car looked way cleaner than I expected.
           </p>
           <p><strong>- Customer Name</strong></p>
         </article>
@@ -690,8 +1005,7 @@
         <article class="review-card">
           <div class="stars">★★★★★</div>
           <p>
-            Super convenient and professional. The inside looked way better
-            than I expected.
+            Great communication, arrived on time, and the interior came out fresh and clean.
           </p>
           <p><strong>- Customer Name</strong></p>
         </article>
@@ -699,65 +1013,27 @@
         <article class="review-card">
           <div class="stars">★★★★★</div>
           <p>
-            Worth it. Good communication, strong results, and the finish looked clean.
+            Worth it. Professional service, clean finish, and really convenient.
           </p>
           <p><strong>- Customer Name</strong></p>
         </article>
-      </div>
-
-      <div class="cta-band" style="margin-top:22px;">
-        <div>
-          <h3>Want more reviews?</h3>
-          <p style="margin:0;color:var(--muted);">
-            Replace this link with your direct Google review link.
-          </p>
-        </div>
-        <div class="inline-actions">
-          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">Leave a Google Review</a>
-        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Contact</span>
-        <h2>Book without the runaround.</h2>
-        <p class="section-copy">
-          Keep this part simple. Let people call, text, message, or leave a review fast.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Fastest Way to Book</h3>
-          <ul class="contact-list">
-            <li><strong>Call or Text:</strong> <a href="tel:18602532863">(860) 253-2863</a></li>
-            <li><strong>Website:</strong> <a href="https://watsonfinish.com" target="_blank" rel="noopener">WatsonFinish.com</a></li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/watsonfinish" target="_blank" rel="noopener">@WatsonFinish</a></li>
-            <li><strong>Facebook:</strong> <a href="https://facebook.com/" target="_blank" rel="noopener">Add your Facebook link</a></li>
-            <li><strong>Google Reviews:</strong> <a href="#" target="_blank" rel="noopener">Add your Google review link</a></li>
-          </ul>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:18602532863">Call</a>
-            <a class="btn btn-danger" href="sms:18602532863">Text</a>
-          </div>
+      <div class="cta-band">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2 style="margin-bottom:8px;">Ready to clean up your vehicle?</h2>
+          <p style="margin:0;color:var(--muted);">
+            Call or text Watson Finish for a quote, recommendation, or appointment.
+          </p>
         </div>
-
-        <div class="contact-card">
-          <h3>What to Ask for When Booking</h3>
-          <ul>
-            <li>Vehicle year, make, and model</li>
-            <li>Interior, exterior, or full detail</li>
-            <li>Any stains, pet hair, or heavy buildup</li>
-            <li>Your location and preferred time</li>
-          </ul>
-
-          <div class="notice">
-            Next upgrade: add a real contact form or booking form here.
-          </div>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href="tel:18602532863">Call (860) 253-2863</a>
+          <a class="btn btn-dark" href="sms:18602532863">Text For Quote</a>
         </div>
       </div>
     </div>
@@ -768,18 +1044,17 @@
       <div>
         <h3>Watson Finish</h3>
         <p>
-          Premium mobile detailing with a classic modern feel.
-          Clean results, easy booking, and service built around convenience.
+          Premium mobile detailing with a clean, modern look and service built around convenience.
         </p>
       </div>
 
       <div>
         <h3>Quick Links</h3>
         <ul class="footer-list">
-          <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#addons">Add-Ons</a></li>
+          <li><a href="#booking">Booking</a></li>
         </ul>
       </div>
 
@@ -787,11 +1062,83 @@
         <h3>Contact</h3>
         <ul class="footer-list">
           <li><a href="tel:18602532863">(860) 253-2863</a></li>
-          <li><a href="https://watsonfinish.com" target="_blank" rel="noopener">WatsonFinish.com</a></li>
+          <li><a href="sms:18602532863">Text For Quote</a></li>
           <li><a href="https://instagram.com/watsonfinish" target="_blank" rel="noopener">@WatsonFinish</a></li>
         </ul>
       </div>
     </div>
   </footer>
+
+  <!-- Popup -->
+  <div class="popup-overlay" id="consultPopup" aria-hidden="true">
+    <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+      <button class="popup-close" id="closePopup" aria-label="Close popup">&times;</button>
+
+      <div class="popup-inner">
+        <div class="popup-title" id="popupTitle">Not Sure Which Package Is Right For You?</div>
+
+        <div class="popup-gallery">
+          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=80" alt="Detailing photo one">
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80" alt="Detailing photo two">
+        </div>
+
+        <div class="popup-copy">
+          Call or text us at
+          <a href="tel:18602532863">(860) 253-2863</a>
+          for a consultation
+        </div>
+
+        <div class="popup-actions">
+          <a class="popup-btn popup-btn-dark" href="https://example.com/booking" target="_blank" rel="noopener">View Booking Page</a>
+          <a class="popup-btn popup-btn-gray" href="tel:18602532863">Call (860) 253-2863 Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("active");
+    });
+
+    const popup = document.getElementById("consultPopup");
+    const closePopup = document.getElementById("closePopup");
+    let popupShown = false;
+
+    function showPopup() {
+      if (popupShown) return;
+      popupShown = true;
+      popup.classList.add("active");
+      popup.setAttribute("aria-hidden", "false");
+    }
+
+    function hidePopup() {
+      popup.classList.remove("active");
+      popup.setAttribute("aria-hidden", "true");
+    }
+
+    setTimeout(() => {
+      showPopup();
+    }, 7000);
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 180) {
+        showPopup();
+      }
+    });
+
+    closePopup.addEventListener("click", hidePopup);
+
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) hidePopup();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") hidePopup();
+    });
+  </script>
 </body>
 </html>
