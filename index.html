@@ -3,56 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Watson Finish | Premium Mobile Detailing</title>
-  <meta
-    name="description"
-    content="Watson Finish provides premium mobile detailing with modern convenience and a clean professional finish. Call or text for a quote today."
-  />
+
+  <title>WatsonFinish | Premium Mobile Detailing</title>
+  <meta name="description" content="WatsonFinish provides premium mobile detailing with classic finish and modern convenience. Book mobile car detailing today." />
 
   <style>
     :root {
-      --bg: #06080d;
-      --bg-2: #0b1220;
-      --panel: rgba(255, 255, 255, 0.05);
-      --panel-2: rgba(255, 255, 255, 0.08);
-      --border: rgba(255, 255, 255, 0.12);
-      --text: #f5f8ff;
-      --muted: #b7c4dc;
-      --blue: #176bff;
-      --blue-2: #4a97ff;
-      --blue-soft: rgba(23, 107, 255, 0.16);
-      --shadow: 0 20px 55px rgba(0, 0, 0, 0.38);
-      --radius: 22px;
+      --black: #030406;
+      --black-soft: #080b12;
+      --midnight: #0b1220;
+      --panel: rgba(255,255,255,0.055);
+      --panel-strong: rgba(255,255,255,0.09);
+      --border: rgba(170,210,255,0.18);
+      --text: #f7fbff;
+      --muted: #b9c8dc;
+      --blue: #78bfff;
+      --blue-strong: #2584ff;
+      --red: #e23d3d;
+      --red-soft: rgba(226,61,61,0.22);
+      --silver: #e9f4ff;
+      --gold: #ffd18a;
+      --shadow: 0 25px 80px rgba(0,0,0,0.55);
+      --radius: 24px;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(23, 107, 255, 0.14), transparent 22%),
-        linear-gradient(180deg, #05070b 0%, #09111e 38%, #06080d 100%);
+        radial-gradient(circle at 20% 0%, rgba(120,191,255,0.16), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(226,61,61,0.12), transparent 26%),
+        linear-gradient(180deg, #020304 0%, #070b13 42%, #030406 100%);
       line-height: 1.6;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
@@ -63,56 +55,57 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(6, 8, 13, 0.88);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(3,4,6,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(170,210,255,0.12);
     }
 
     .nav-inner {
-      min-height: 78px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      min-width: 0;
+      gap: 14px;
     }
 
     .brand-logo {
-      width: 56px;
-      height: 56px;
+      width: 68px;
+      height: 54px;
       border-radius: 14px;
+      background: #000;
+      border: 1px solid rgba(120,191,255,0.22);
+      box-shadow: 0 0 28px rgba(120,191,255,0.12);
+      display: grid;
+      place-items: center;
       overflow: hidden;
-      border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      box-shadow: var(--shadow);
-      flex-shrink: 0;
     }
 
     .brand-logo img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      padding: 6px;
+      padding: 4px;
     }
 
     .brand-text strong {
       display: block;
-      font-size: 1rem;
-      letter-spacing: 0.12em;
       text-transform: uppercase;
-      white-space: nowrap;
+      letter-spacing: 0.16em;
+      font-size: 0.98rem;
     }
 
     .brand-text span {
       display: block;
       color: var(--muted);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .nav-links {
@@ -124,300 +117,261 @@
     .nav-links a {
       color: var(--muted);
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
     }
 
-    .nav-links a:hover {
-      color: var(--text);
-    }
+    .nav-links a:hover { color: var(--text); }
 
     .nav-cta {
-      padding: 10px 16px;
+      padding: 11px 17px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      color: white;
+      background: linear-gradient(135deg, var(--blue-strong), var(--blue));
+      color: #04101e !important;
+      box-shadow: 0 0 24px rgba(120,191,255,0.2);
     }
 
     .menu-toggle {
       display: none;
       background: transparent;
-      border: 1px solid var(--border);
       color: white;
-      border-radius: 12px;
+      border: 1px solid var(--border);
       padding: 10px 14px;
-      font-size: 1rem;
-      cursor: pointer;
+      border-radius: 12px;
+      font-weight: 800;
     }
 
     .mobile-menu {
       display: none;
-      padding: 0 0 18px;
+      padding-bottom: 18px;
     }
 
-    .mobile-menu.active {
-      display: block;
-    }
+    .mobile-menu.active { display: block; }
 
     .mobile-menu a {
       display: block;
       padding: 12px 0;
       color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
       font-weight: 700;
-      border-top: 1px solid rgba(255,255,255,0.07);
     }
 
     .hero {
-      min-height: 82vh;
+      min-height: 88vh;
       display: flex;
       align-items: center;
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(rgba(4, 7, 12, 0.58), rgba(4, 7, 12, 0.84)),
-        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+        linear-gradient(90deg, rgba(0,0,0,0.92), rgba(0,0,0,0.64), rgba(0,0,0,0.88)),
+        url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+      border-bottom: 1px solid rgba(120,191,255,0.12);
     }
 
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(23,107,255,0.10), transparent 34%);
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(120,191,255,0.08) 42%, transparent 58%),
+        radial-gradient(circle at 55% 30%, rgba(226,61,61,0.16), transparent 28%);
       pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      width: 100%;
-      padding: 90px 0 70px;
+      padding: 88px 0;
+      max-width: 720px;
     }
 
     .eyebrow {
-      display: inline-block;
-      margin-bottom: 14px;
-      color: #99beff;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--blue);
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: 0.82rem;
-      font-weight: 800;
+      letter-spacing: 0.22em;
+      font-size: 0.8rem;
+      font-weight: 900;
+      margin-bottom: 16px;
     }
 
-    h1, h2, h3 {
-      margin: 0 0 14px;
-      line-height: 1.08;
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--blue));
+      box-shadow: 0 0 16px rgba(120,191,255,0.55);
     }
+
+    h1, h2, h3 { margin: 0 0 14px; line-height: 1.05; }
 
     h1 {
-      font-size: clamp(2.9rem, 8vw, 5.8rem);
+      font-size: clamp(3.3rem, 8vw, 6.4rem);
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      max-width: 9ch;
+      letter-spacing: 0.055em;
+      background: linear-gradient(180deg, #ffffff, #9ed0ff 42%, #2d78c8 82%);
+      -webkit-background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 34px rgba(120,191,255,0.14);
     }
 
-    h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-    }
-
-    h3 {
-      font-size: 1.22rem;
-    }
+    h2 { font-size: clamp(2.1rem, 4.4vw, 3.4rem); }
+    h3 { font-size: 1.24rem; }
 
     .hero-sub {
-      font-size: clamp(1.5rem, 4vw, 2.8rem);
-      font-weight: 700;
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      font-weight: 800;
+      color: white;
       margin-bottom: 18px;
     }
 
     .lead {
-      max-width: 58ch;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.1rem;
+      max-width: 62ch;
     }
 
-    .hero-actions,
-    .inline-actions {
+    .hero-actions, .inline-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 26px;
+      margin-top: 28px;
     }
 
     .btn {
-      min-height: 52px;
+      min-height: 54px;
       padding: 0 22px;
       border-radius: 999px;
+      border: 1px solid var(--border);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      border: 1px solid var(--border);
+      font-weight: 900;
       transition: 0.2s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-1px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
-      color: white;
-      box-shadow: 0 10px 28px rgba(23,107,255,0.25);
+      background: linear-gradient(135deg, var(--blue-strong), var(--blue));
+      color: #02101e;
+      box-shadow: 0 0 28px rgba(120,191,255,0.22);
     }
 
     .btn-dark {
-      background: rgba(0,0,0,0.45);
+      background: rgba(255,255,255,0.04);
       color: white;
     }
 
-    .btn-light {
-      background: transparent;
+    .btn-red {
+      background: linear-gradient(135deg, #9e1f1f, var(--red));
       color: white;
+      box-shadow: 0 0 24px rgba(226,61,61,0.18);
     }
 
     .hero-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 18px;
+      margin-top: 22px;
     }
 
     .tag {
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      color: #d9e6ff;
-      font-size: 0.92rem;
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(120,191,255,0.14);
+      color: #dbeeff;
+      font-size: 0.9rem;
     }
 
-    section {
-      padding: 72px 0;
-    }
+    section { padding: 78px 0; }
 
-    .section-head {
-      margin-bottom: 24px;
-    }
+    .section-head { margin-bottom: 26px; }
+    .section-copy { color: var(--muted); max-width: 68ch; }
 
-    .section-copy {
-      color: var(--muted);
-      max-width: 64ch;
-    }
-
-    .card,
-    .service-card,
-    .addon-card,
-    .review-card,
-    .contact-card,
-    .info-card,
-    .popup-box,
-    .cta-band {
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    .card, .service-card, .addon-card, .review-card, .contact-card, .cta-band {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
       border: 1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
-    .about-grid,
-    .contact-grid,
-    .service-grid,
-    .addon-grid,
-    .review-grid,
-    .info-grid {
+    .about-grid, .contact-grid {
       display: grid;
-      gap: 22px;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
     }
 
-    .about-grid,
-    .contact-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-grid,
-    .addon-grid,
-    .review-grid,
-    .info-grid {
+    .grid-3 {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
     }
 
-    .card,
-    .contact-card,
-    .service-card,
-    .addon-card,
-    .review-card,
-    .info-card {
-      padding: 24px;
-    }
-
-    .card p,
-    .contact-card p,
-    .service-card p,
-    .addon-card p,
-    .review-card p,
-    .info-card p {
-      color: var(--muted);
-    }
-
-    .info-card,
-    .service-card,
-    .addon-card {
+    .card, .service-card, .addon-card, .review-card, .contact-card {
+      padding: 26px;
       position: relative;
       overflow: hidden;
     }
 
-    .info-card::before,
-    .service-card::before,
-    .addon-card::before {
+    .card p, .service-card p, .addon-card p, .review-card p, .contact-card p {
+      color: var(--muted);
+    }
+
+    .service-card::before, .addon-card::before, .card.lined::before {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
       height: 4px;
-      background: linear-gradient(90deg, var(--blue), var(--blue-2));
+      width: 100%;
+      background: linear-gradient(90deg, var(--red), var(--blue), var(--silver));
     }
 
-    .service-badge,
-    .price-badge {
+    .service-badge, .price-badge {
       display: inline-flex;
       align-items: center;
-      padding: 8px 12px;
       border-radius: 999px;
-      font-size: 0.8rem;
+      padding: 8px 12px;
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-weight: 800;
+      letter-spacing: 0.09em;
+      font-weight: 900;
       margin-bottom: 14px;
     }
 
     .service-badge {
-      color: #a7c8ff;
-      background: var(--blue-soft);
-      border: 1px solid rgba(23,107,255,0.24);
+      background: rgba(120,191,255,0.12);
+      color: var(--blue);
+      border: 1px solid rgba(120,191,255,0.24);
     }
 
     .price-badge {
-      color: white;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(226,61,61,0.13);
+      color: #ffd4d4;
+      border: 1px solid rgba(226,61,61,0.28);
     }
 
     .best-value {
-      outline: 2px solid rgba(23,107,255,0.34);
+      outline: 2px solid rgba(120,191,255,0.32);
     }
 
     .best-value::after {
       content: "Best Value";
       position: absolute;
-      top: 16px;
-      right: 16px;
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--blue), var(--blue-2));
+      top: 18px;
+      right: 18px;
+      background: linear-gradient(135deg, var(--red), var(--blue-strong));
       color: white;
-      font-size: 0.74rem;
-      font-weight: 800;
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      font-weight: 900;
     }
 
     .feature-list {
@@ -426,8 +380,25 @@
       color: var(--muted);
     }
 
-    .feature-list li {
-      margin: 10px 0;
+    .feature-list li { margin: 9px 0; }
+
+    .lux-note {
+      margin-top: 16px;
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(120,191,255,0.07);
+      border: 1px solid rgba(120,191,255,0.13);
+      color: #d9ecff;
+      font-size: 0.95rem;
+    }
+
+    .cta-band {
+      padding: 26px;
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
     }
 
     .contact-list {
@@ -437,55 +408,30 @@
     }
 
     .contact-list li {
-      padding: 10px 0;
+      padding: 11px 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
     }
 
-    .contact-list li:last-child {
-      border-bottom: none;
-    }
-
-    .contact-list a {
-      color: #8ab8ff;
-    }
+    .contact-list a { color: var(--blue); }
 
     .stars {
-      color: #ffe28b;
+      color: var(--gold);
       letter-spacing: 0.12em;
       font-weight: 900;
       margin-bottom: 10px;
     }
 
-    .cta-band {
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      margin-top: 26px;
-    }
-
-    .note {
-      margin-top: 14px;
-      padding: 14px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
     .footer {
-      padding: 42px 0 50px;
+      padding: 44px 0 56px;
+      border-top: 1px solid rgba(120,191,255,0.12);
       color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,0.06);
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr 0.8fr;
-      gap: 20px;
+      gap: 22px;
     }
 
     .footer-list {
@@ -494,15 +440,12 @@
       margin: 0;
     }
 
-    .footer-list li {
-      margin: 8px 0;
-    }
+    .footer-list li { margin: 8px 0; }
 
-    /* Popup */
     .popup-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(3, 7, 12, 0.72);
+      background: rgba(0,0,0,0.72);
       display: none;
       align-items: center;
       justify-content: center;
@@ -510,47 +453,46 @@
       z-index: 2000;
     }
 
-    .popup-overlay.active {
-      display: flex;
-    }
+    .popup-overlay.active { display: flex; }
 
     .popup-box {
       width: min(100%, 760px);
-      color: #111827;
-      padding: 22px;
+      border-radius: 28px;
+      padding: 24px;
       position: relative;
+      color: #101827;
       background:
         linear-gradient(rgba(255,255,255,0.94), rgba(255,255,255,0.91)),
-        url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-      border-radius: 26px;
+        url("https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1300&q=80") center/cover no-repeat;
+      border: 1px solid rgba(255,255,255,0.6);
+      box-shadow: 0 30px 100px rgba(0,0,0,0.6);
     }
 
     .popup-close {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      top: 14px;
+      right: 14px;
       width: 48px;
       height: 48px;
       border: none;
       border-radius: 999px;
-      background: rgba(255,255,255,0.86);
+      background: rgba(255,255,255,0.88);
       font-size: 2rem;
-      line-height: 1;
       cursor: pointer;
     }
 
     .popup-inner {
-      padding: 24px 12px 8px;
       text-align: center;
+      padding: 30px 12px 8px;
     }
 
     .popup-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 900;
-      text-transform: uppercase;
+      font-size: clamp(2rem, 5vw, 3.3rem);
       line-height: 1.1;
-      color: var(--blue);
-      margin-bottom: 20px;
+      font-weight: 950;
+      text-transform: uppercase;
+      color: #0a62d8;
+      margin-bottom: 18px;
     }
 
     .popup-gallery {
@@ -562,29 +504,29 @@
 
     .popup-gallery img {
       width: 100%;
-      aspect-ratio: 1 / 0.8;
+      aspect-ratio: 1 / 0.82;
       object-fit: cover;
       border-radius: 14px;
     }
 
     .popup-copy {
       font-size: 1.18rem;
-      font-weight: 700;
-      color: #1f2937;
+      color: #202939;
+      font-weight: 800;
       margin-bottom: 22px;
     }
 
     .popup-copy a {
-      color: var(--blue);
-      font-weight: 900;
+      color: #0a62d8;
+      font-weight: 950;
     }
 
     .popup-actions {
+      max-width: 500px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
       gap: 14px;
-      max-width: 480px;
-      margin: 0 auto;
     }
 
     .popup-btn {
@@ -592,93 +534,57 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 1rem;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
     }
 
-    .popup-btn-dark {
-      background: #000;
-      color: #fff;
-    }
-
-    .popup-btn-gray {
-      background: #666d79;
-      color: #fff;
-    }
+    .popup-btn-black { background: #000; color: white; }
+    .popup-btn-gray { background: #666d78; color: white; }
 
     @media (max-width: 1024px) {
-      .about-grid,
-      .contact-grid,
-      .service-grid,
-      .addon-grid,
-      .review-grid,
-      .info-grid,
-      .footer-grid {
+      .about-grid, .contact-grid, .grid-3, .footer-grid {
         grid-template-columns: 1fr;
       }
     }
 
     @media (max-width: 860px) {
-      .nav-links {
-        display: none;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .brand-text span {
-        display: none;
-      }
-
-      .hero {
-        min-height: 74vh;
-      }
-
-      .hero-content {
-        padding: 84px 0 64px;
-      }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; }
+      .brand-text span { display: none; }
+      .hero { min-height: 78vh; }
     }
 
     @media (max-width: 640px) {
-      section {
-        padding: 58px 0;
-      }
-
-      .hero-actions,
-      .inline-actions {
+      section { padding: 60px 0; }
+      .hero-actions, .inline-actions {
         flex-direction: column;
         align-items: stretch;
       }
-
-      .btn {
-        width: 100%;
-      }
-
+      .btn { width: 100%; }
       .cta-band {
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .popup-gallery {
-        grid-template-columns: 1fr;
+      .popup-gallery { grid-template-columns: 1fr; }
+      .brand-logo {
+        width: 58px;
+        height: 48px;
       }
     }
   </style>
 </head>
+
 <body>
 
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#home" class="brand">
         <div class="brand-logo">
-          <!-- Replace logo.png with your actual WatsonFinish logo -->
-          <img src="logo.png" alt="Watson Finish logo" />
+          <img src="logo.png" alt="WatsonFinish logo" />
         </div>
         <div class="brand-text">
-          <strong>Watson Finish</strong>
+          <strong>WatsonFinish</strong>
           <span>Premium Mobile Detailing</span>
         </div>
       </a>
@@ -687,21 +593,21 @@
         <a href="#about">About</a>
         <a href="#packages">Packages</a>
         <a href="#addons">Add-Ons</a>
-        <a href="#booking">Booking</a>
         <a href="#reviews">Reviews</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cta" href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">Book Now</a>
       </div>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">Menu</button>
+      <button class="menu-toggle" id="menuToggle">Menu</button>
     </div>
 
     <div class="container mobile-menu" id="mobileMenu">
       <a href="#about">About</a>
       <a href="#packages">Packages</a>
       <a href="#addons">Add-Ons</a>
-      <a href="#booking">Booking</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
+      <a href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">Book Now</a>
     </div>
   </nav>
 
@@ -709,24 +615,24 @@
     <div class="container hero-content">
       <span class="eyebrow">Premium Mobile Detailing</span>
       <h1>Watson Finish</h1>
-      <div class="hero-sub">We come to you.</div>
+      <div class="hero-sub">Classic Finish. Modern Convenience.</div>
       <p class="lead">
-        Watson Finish delivers premium mobile detailing with a clean, professional,
-        modern experience. No shop wait, no unnecessary hassle, just quality service
-        brought right to your location.
+        WatsonFinish brings premium mobile detailing straight to your location.
+        Clean results, professional presentation, and a polished experience built
+        around convenience, quality, and trust.
       </p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="tel:18602532863">Call (860) 253-2863</a>
+        <a class="btn btn-primary" href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">Book Now</a>
+        <a class="btn btn-red" href="tel:18602532863">Call (860) 253-2863</a>
         <a class="btn btn-dark" href="sms:18602532863">Text For Quote</a>
-        <a class="btn btn-light" href="#booking">View Booking Page</a>
       </div>
 
       <div class="hero-tags">
-        <span class="tag">Mobile Service</span>
+        <span class="tag">We Come To You</span>
         <span class="tag">Interior + Exterior</span>
-        <span class="tag">Simple Packages</span>
-        <span class="tag">Serving Hartford Area</span>
+        <span class="tag">Paint Decontamination</span>
+        <span class="tag">WatsonFinish.com</span>
       </div>
     </div>
   </header>
@@ -735,44 +641,35 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">About Us</span>
-        <h2>Built around convenience, quality, and a stronger finish.</h2>
+        <h2>Bringing a premium finish to you, wherever you are.</h2>
         <p class="section-copy">
-          Watson Finish was built to make car care easier to book and easier to trust.
-          We bring professional detailing directly to your home, job, or preferred location,
-          while keeping the process simple and the results high quality.
+          WatsonFinish was created to make detailing feel simple, professional,
+          and worth it. We bring quality mobile detailing directly to your home,
+          job, or preferred location so you can get your vehicle cleaned and refreshed
+          without the shop wait.
         </p>
       </div>
 
       <div class="about-grid">
-        <div class="card">
-          <h3>What Watson Finish Is About</h3>
+        <div class="card lined">
+          <h3>Luxury Service Without The Hassle</h3>
           <p>
-            We focus on delivering a polished, premium experience from the first message
-            to the final wipe-down. Whether your vehicle needs regular upkeep or a deeper
-            reset, our goal is to improve how it looks, feels, and holds up over time.
+            Our focus is clean work, strong presentation, and a smooth customer
+            experience from first contact to final finish. Whether your vehicle
+            needs a quick maintenance detail or a full transformation, we help
+            you choose the right service for the condition of your car.
           </p>
-          <div class="note">
-            Replace this paragraph later with your personal story, how you started,
-            and what makes Watson Finish different.
-          </div>
         </div>
 
-        <div class="card">
-          <h3>Why Customers Book Us</h3>
-          <div class="info-grid">
-            <div class="info-card">
-              <h3>Convenient</h3>
-              <p>We come to your location so you save time and skip the shop wait.</p>
-            </div>
-            <div class="info-card">
-              <h3>Professional</h3>
-              <p>Clear service, honest recommendations, and a premium finished look.</p>
-            </div>
-            <div class="info-card">
-              <h3>Practical</h3>
-              <p>Packages built for maintenance, comfort, appearance, and long-term upkeep.</p>
-            </div>
-          </div>
+        <div class="card lined">
+          <h3>Why Customers Choose WatsonFinish</h3>
+          <ul class="feature-list">
+            <li>Mobile service — we come to you</li>
+            <li>Clear packages with simple starting prices</li>
+            <li>Interior, exterior, and full detail options</li>
+            <li>Professional look and luxury-style presentation</li>
+            <li>Easy booking through WatsonFinish.com</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -781,95 +678,153 @@
   <section id="packages">
     <div class="container">
       <div class="section-head">
-        <span class="eyebrow">Packages</span>
-        <h2>Easy packages customers can understand fast.</h2>
+        <span class="eyebrow">Premium Detailing Packages</span>
+        <h2>Choose the detail that fits your vehicle.</h2>
         <p class="section-copy">
-          These are launch-ready example packages with pricing, clear service explanations,
-          and value-focused descriptions. Edit them any time as your business grows.
+          Final pricing may vary based on vehicle size, condition, buildup,
+          pet hair, stains, and requested add-ons.
         </p>
       </div>
 
-      <div class="service-grid">
+      <div class="grid-3">
         <article class="service-card">
-          <span class="service-badge">Exterior Refresh</span>
-          <span class="price-badge">Starting at $85</span>
-          <h3>Exterior Refresh</h3>
+          <span class="service-badge">Essential Package</span>
+          <span class="price-badge">Starting at $125</span>
+          <h3>Essential Package</h3>
           <p>
-            A strong maintenance package for vehicles that need a cleaner look,
-            fresh shine, and routine exterior upkeep without going into a full deep detail.
+            Perfect for quick maintenance and keeping your car clean without
+            needing a full deep detail.
           </p>
           <ul class="feature-list">
-            <li>Hand wash of the full exterior</li>
-            <li>Wheel and tire cleaning</li>
-            <li>Tire shine application</li>
-            <li>Exterior glass cleaning</li>
-            <li>Quick spray protection for gloss and surface enhancement</li>
-            <li>Final wipe-down for a cleaner presentation</li>
+            <li>Exterior wash and shine</li>
+            <li>Wheel and tire clean + shine</li>
+            <li>Interior vacuum</li>
+            <li>Interior wipe down</li>
+            <li>Window cleaning</li>
           </ul>
-          <p>
-            <strong>Why this is a good plan for your car:</strong> It helps maintain
-            a clean, presentable exterior, supports paint appearance between deeper services,
-            and is a solid recurring option for regular upkeep.
-          </p>
+          <div class="lux-note">
+            Best for vehicles that are already in fair condition and need a clean,
+            refreshed look inside and out.
+          </div>
         </article>
 
         <article class="service-card">
           <span class="service-badge">Interior Reset</span>
-          <span class="price-badge">Starting at $110</span>
+          <span class="price-badge">Starting at $235</span>
           <h3>Interior Reset</h3>
           <p>
-            A deeper interior-focused package for vehicles that need dirt, crumbs,
-            dust, and light buildup cleaned out to make the cabin feel fresher and more comfortable.
+            A deeper interior-focused service made to bring comfort, cleanliness,
+            and freshness back into the cabin.
           </p>
           <ul class="feature-list">
-            <li>Full interior vacuum</li>
-            <li>Wipe down of major interior surfaces</li>
-            <li>Dash, console, and door panel cleaning</li>
+            <li>Full interior detail</li>
+            <li>Carpet shampoo</li>
+            <li>Seat shampoo</li>
+            <li>Leather conditioning</li>
             <li>Interior glass cleaning</li>
-            <li>Floor mat refresh</li>
-            <li>Finishing touch to improve overall cabin appearance</li>
           </ul>
+          <div class="lux-note">
+            Best for daily drivers, family vehicles, and interiors with buildup,
+            stains, dust, or general wear.
+          </div>
+        </article>
+
+        <article class="service-card">
+          <span class="service-badge">Classic Paint Finish</span>
+          <span class="price-badge">Starting at $235</span>
+          <h3>Classic Paint Finish</h3>
           <p>
-            <strong>Why this is a good plan for your car:</strong> It improves day-to-day
-            comfort, keeps the inside looking more cared for, and is great when the cabin
-            needs more than a quick cleanup but not a full premium detail.
+            A paint-focused package designed to improve gloss, smoothness,
+            and exterior protection.
           </p>
+          <ul class="feature-list">
+            <li>Clay bar treatment</li>
+            <li>Wax coating</li>
+            <li>High gloss paint sealant</li>
+            <li>Paint surface decontamination</li>
+            <li>Exterior finish enhancement</li>
+          </ul>
+          <div class="lux-note">
+            Best for vehicles that need better shine, smoother paint, and more
+            protection after normal washing.
+          </div>
         </article>
 
         <article class="service-card best-value">
-          <span class="service-badge">Full Detail</span>
-          <span class="price-badge">Starting at $185</span>
-          <h3>Full Detail</h3>
+          <span class="service-badge">Showroom Finish</span>
+          <span class="price-badge">Starting at $375</span>
+          <h3>Showroom Finish</h3>
           <p>
-            This is the best overall package for customers who want the strongest visual
-            improvement and the most complete inside-and-out refresh in one appointment.
+            The full transformation package and best value. This combines the
+            strongest parts of every package into one complete detail.
           </p>
           <ul class="feature-list">
-            <li>Everything included in Exterior Refresh</li>
-            <li>Everything included in Interior Reset</li>
-            <li>Clay bar treatment as needed</li>
-            <li>Sealant or wax protection for extra gloss</li>
-            <li>More complete finishing touch-up</li>
-            <li>Stronger overall transformation in appearance</li>
+            <li>Complete interior and exterior detail</li>
+            <li>Paint decontamination and protection</li>
+            <li>Interior vacuum and wipe down</li>
+            <li>Wheel and tire clean + shine</li>
+            <li>Clay bar treatment</li>
+            <li>Wax coating and high gloss sealant</li>
+            <li>Everything included from all packages</li>
           </ul>
+          <div class="lux-note">
+            Best for customers who want the most noticeable result, strongest
+            value, and a complete inside-and-out reset.
+          </div>
+        </article>
+
+        <article class="service-card">
+          <span class="service-badge">Maintenance Plan</span>
+          <span class="price-badge">Custom Pricing</span>
+          <h3>Maintenance Detailing</h3>
           <p>
-            <strong>Why this is a good plan for your car:</strong> It gives the best value,
-            provides the most noticeable improvement, and works well for vehicles that need
-            a more complete reset rather than light maintenance only.
+            Keep your vehicle consistently clean after a full detail with recurring
+            upkeep on a weekly, bi-weekly, or monthly schedule.
           </p>
+          <ul class="feature-list">
+            <li>Routine exterior upkeep</li>
+            <li>Interior touch-up cleaning</li>
+            <li>Wheel and tire refresh</li>
+            <li>Glass cleaning</li>
+            <li>Discounted recurring service options</li>
+          </ul>
+          <div class="lux-note">
+            Best for customers who want their vehicle to stay clean without waiting
+            until it gets bad again.
+          </div>
+        </article>
+
+        <article class="service-card">
+          <span class="service-badge">Consultation</span>
+          <span class="price-badge">Call or Text</span>
+          <h3>Not Sure What You Need?</h3>
+          <p>
+            Send photos or book a consultation and we will recommend the best
+            package based on your vehicle condition and goals.
+          </p>
+          <ul class="feature-list">
+            <li>Quick recommendation</li>
+            <li>Package guidance</li>
+            <li>Add-on suggestions if needed</li>
+            <li>Quote based on size and condition</li>
+          </ul>
+          <div class="lux-note">
+            Best if you are deciding between Essential, Interior Reset, Classic
+            Paint Finish, or Showroom Finish.
+          </div>
         </article>
       </div>
 
       <div class="cta-band">
         <div>
-          <h3>Not sure which package fits your vehicle?</h3>
+          <h3>Not sure which package is right for you?</h3>
           <p style="margin:0;color:var(--muted);">
-            Call or text Watson Finish and get a quick recommendation based on your vehicle condition and goals.
+            Call or text us for a quick consultation, or book directly online.
           </p>
         </div>
         <div class="inline-actions">
-          <a class="btn btn-primary" href="tel:18602532863">Call Now</a>
-          <a class="btn btn-dark" href="sms:18602532863">Text For Help</a>
+          <a class="btn btn-primary" href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">View Booking Page</a>
+          <a class="btn btn-red" href="tel:18602532863">Call Now</a>
         </div>
       </div>
     </div>
@@ -879,106 +834,45 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Add-Ons</span>
-        <h2>Extra upgrades for vehicles that need more attention.</h2>
-        <p class="section-copy">
-          These let you keep your core packages simple while still offering higher-ticket options where needed.
-        </p>
+        <h2>Extra care where your vehicle needs it most.</h2>
       </div>
 
-      <div class="addon-grid">
+      <div class="grid-3">
         <article class="addon-card">
-          <span class="price-badge">+$20+</span>
+          <span class="price-badge">$70</span>
+          <h3>Engine Bay</h3>
+          <p>Appearance-focused engine bay cleaning for a cleaner overall presentation.</p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">$75</span>
+          <h3>Headlight Restoration</h3>
+          <p>Improves cloudy headlights for a cleaner look and better visibility.</p>
+        </article>
+
+        <article class="addon-card">
+          <span class="price-badge">$50</span>
           <h3>Pet Hair Removal</h3>
-          <p>
-            Extra time and effort focused on seats, carpets, and fabric areas where hair is deeply worked in.
-          </p>
+          <p>Extra removal work for hair trapped in carpets, seats, and fabric areas.</p>
         </article>
 
         <article class="addon-card">
-          <span class="price-badge">+$30+</span>
-          <h3>Seat Shampoo</h3>
-          <p>
-            A good add-on for cloth seats that need more than basic surface cleaning to improve appearance.
-          </p>
+          <span class="price-badge">$75</span>
+          <h3>Odor Removal</h3>
+          <p>Helps reduce unwanted odors from smoke, food, moisture, pets, or buildup.</p>
         </article>
 
         <article class="addon-card">
-          <span class="price-badge">+$25+</span>
-          <h3>Stain Treatment</h3>
-          <p>
-            Targeted work on problem spots that need extra attention beyond the normal package service.
-          </p>
+          <span class="price-badge">$40</span>
+          <h3>Headliner Cleaning</h3>
+          <p>Careful light cleaning for the headliner area when it needs attention.</p>
         </article>
 
         <article class="addon-card">
-          <span class="price-badge">+$25+</span>
-          <h3>Odor Treatment</h3>
-          <p>
-            Helps improve cabin freshness for smells caused by food, smoke, moisture, or general buildup.
-          </p>
+          <span class="price-badge">Custom</span>
+          <h3>Heavy Condition Fee</h3>
+          <p>For vehicles with heavy buildup, excessive stains, mold risk, or extra labor needs.</p>
         </article>
-
-        <article class="addon-card">
-          <span class="price-badge">+$40+</span>
-          <h3>Engine Bay Detail</h3>
-          <p>
-            A careful appearance-focused cleaning of the engine bay area for a more complete finished look.
-          </p>
-        </article>
-
-        <article class="addon-card">
-          <span class="price-badge">+$25+</span>
-          <h3>Deep Crevice Cleaning</h3>
-          <p>
-            Extra attention to vents, seams, trim edges, cupholders, and other tight spaces where buildup collects.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="booking">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Booking</span>
-        <h2>Book without the runaround.</h2>
-        <p class="section-copy">
-          Replace the example booking link below with your actual booking page when it is ready.
-        </p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Fastest Ways To Reach Watson Finish</h3>
-          <ul class="contact-list">
-            <li><strong>Call:</strong> <a href="tel:18602532863">(860) 253-2863</a></li>
-            <li><strong>Text:</strong> <a href="sms:18602532863">(860) 253-2863</a></li>
-            <li><strong>Booking Page:</strong> <a href="https://example.com/booking" target="_blank" rel="noopener">View Booking Page</a></li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/watsonfinish" target="_blank" rel="noopener">@WatsonFinish</a></li>
-            <li><strong>Facebook:</strong> <a href="https://facebook.com/" target="_blank" rel="noopener">Add Facebook Link</a></li>
-          </ul>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="tel:18602532863">Call</a>
-            <a class="btn btn-dark" href="sms:18602532863">Text</a>
-            <a class="btn btn-light" href="https://example.com/booking" target="_blank" rel="noopener">Booking Page</a>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <h3>What To Send When Booking</h3>
-          <ul class="feature-list">
-            <li>Vehicle year, make, and model</li>
-            <li>Interior, exterior, or full detail request</li>
-            <li>Any stains, odor, pet hair, or heavy buildup</li>
-            <li>Your location and preferred appointment time</li>
-            <li>Photos if you want a faster quote</li>
-          </ul>
-
-          <div class="note">
-            You can later replace this card with a real contact form or embedded booking form.
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -987,53 +881,89 @@
     <div class="container">
       <div class="section-head">
         <span class="eyebrow">Reviews</span>
-        <h2>Make trust easy to see.</h2>
+        <h2>Trust should be easy to see.</h2>
         <p class="section-copy">
-          Replace these examples with real reviews as they come in.
+          Add real customer reviews here as they come in. Customers can also leave
+          a review through your Google page.
         </p>
       </div>
 
-      <div class="review-grid">
+      <div class="grid-3">
         <article class="review-card">
           <div class="stars">★★★★★</div>
-          <p>
-            Super easy to book and the car looked way cleaner than I expected.
-          </p>
+          <p>Professional, convenient, and the car looked amazing after.</p>
           <p><strong>- Customer Name</strong></p>
         </article>
 
         <article class="review-card">
           <div class="stars">★★★★★</div>
-          <p>
-            Great communication, arrived on time, and the interior came out fresh and clean.
-          </p>
+          <p>Easy to book, great communication, and the interior came out fresh.</p>
           <p><strong>- Customer Name</strong></p>
         </article>
 
         <article class="review-card">
           <div class="stars">★★★★★</div>
-          <p>
-            Worth it. Professional service, clean finish, and really convenient.
-          </p>
+          <p>Worth it. Clean finish, good service, and very convenient.</p>
           <p><strong>- Customer Name</strong></p>
         </article>
+      </div>
+
+      <div class="cta-band">
+        <div>
+          <h3>Already booked with WatsonFinish?</h3>
+          <p style="margin:0;color:var(--muted);">Leave a Google review and help others book with confidence.</p>
+        </div>
+        <div class="inline-actions">
+          <a class="btn btn-primary" href="https://share.google/BkZKkZkxplE1tr5LD" target="_blank" rel="noopener">Leave A Google Review</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="contact">
     <div class="container">
-      <div class="cta-band">
-        <div>
-          <span class="eyebrow">Contact</span>
-          <h2 style="margin-bottom:8px;">Ready to clean up your vehicle?</h2>
-          <p style="margin:0;color:var(--muted);">
-            Call or text Watson Finish for a quote, recommendation, or appointment.
-          </p>
+      <div class="section-head">
+        <span class="eyebrow">Booking & Contact</span>
+        <h2>Book without the runaround.</h2>
+        <p class="section-copy">
+          Book online, call, or text. For faster quotes, send your vehicle year,
+          make, model, service request, photos, and location.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Fastest Ways To Reach Us</h3>
+          <ul class="contact-list">
+            <li><strong>Website:</strong> <a href="https://WatsonFinish.com">WatsonFinish.com</a></li>
+            <li><strong>Booking:</strong> <a href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">View Booking Page</a></li>
+            <li><strong>Call:</strong> <a href="tel:18602532863">(860) 253-2863</a></li>
+            <li><strong>Text:</strong> <a href="sms:18602532863">(860) 253-2863</a></li>
+            <li><strong>Instagram:</strong> WatsonFinish</li>
+            <li><strong>Facebook:</strong> WatsonFinish</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">Book Now</a>
+            <a class="btn btn-red" href="tel:18602532863">Call</a>
+            <a class="btn btn-dark" href="sms:18602532863">Text</a>
+          </div>
         </div>
-        <div class="inline-actions">
-          <a class="btn btn-primary" href="tel:18602532863">Call (860) 253-2863</a>
-          <a class="btn btn-dark" href="sms:18602532863">Text For Quote</a>
+
+        <div class="contact-card">
+          <h3>What To Send When Booking</h3>
+          <ul class="feature-list">
+            <li>Vehicle year, make, and model</li>
+            <li>Package you are interested in</li>
+            <li>Interior, exterior, or full detail goal</li>
+            <li>Photos of the vehicle condition</li>
+            <li>Any stains, pet hair, odor, or heavy buildup</li>
+            <li>Your location and preferred time</li>
+          </ul>
+
+          <div class="lux-note">
+            Final quote depends on vehicle size, condition, and add-ons.
+          </div>
         </div>
       </div>
     </div>
@@ -1042,10 +972,8 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div>
-        <h3>Watson Finish</h3>
-        <p>
-          Premium mobile detailing with a clean, modern look and service built around convenience.
-        </p>
+        <h3>WatsonFinish</h3>
+        <p>Classic Finish. Modern Convenience. Premium mobile detailing brought directly to you.</p>
       </div>
 
       <div>
@@ -1054,42 +982,43 @@
           <li><a href="#about">About</a></li>
           <li><a href="#packages">Packages</a></li>
           <li><a href="#addons">Add-Ons</a></li>
-          <li><a href="#booking">Booking</a></li>
+          <li><a href="#contact">Booking</a></li>
         </ul>
       </div>
 
       <div>
         <h3>Contact</h3>
         <ul class="footer-list">
+          <li><a href="https://WatsonFinish.com">WatsonFinish.com</a></li>
           <li><a href="tel:18602532863">(860) 253-2863</a></li>
-          <li><a href="sms:18602532863">Text For Quote</a></li>
-          <li><a href="https://instagram.com/watsonfinish" target="_blank" rel="noopener">@WatsonFinish</a></li>
+          <li>Instagram: WatsonFinish</li>
+          <li>Facebook: WatsonFinish</li>
         </ul>
       </div>
     </div>
   </footer>
 
-  <!-- Popup -->
   <div class="popup-overlay" id="consultPopup" aria-hidden="true">
     <div class="popup-box" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
       <button class="popup-close" id="closePopup" aria-label="Close popup">&times;</button>
 
       <div class="popup-inner">
-        <div class="popup-title" id="popupTitle">Not Sure Which Package Is Right For You?</div>
+        <div class="popup-title" id="popupTitle">
+          Not Sure Which Package Is Right For You?
+        </div>
 
         <div class="popup-gallery">
-          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=80" alt="Detailing photo one">
-          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80" alt="Detailing photo two">
+          <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=900&q=80" alt="Car detailing example">
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=900&q=80" alt="Clean detailed car">
         </div>
 
         <div class="popup-copy">
-          Call or text us at
-          <a href="tel:18602532863">(860) 253-2863</a>
-          for a consultation
+          Call or text us at <a href="tel:18602532863">(860) 253-2863</a>
+          for a consultation.
         </div>
 
         <div class="popup-actions">
-          <a class="popup-btn popup-btn-dark" href="https://example.com/booking" target="_blank" rel="noopener">View Booking Page</a>
+          <a class="popup-btn popup-btn-black" href="https://calendly.com/watsonfinish/mobile-car-detailing" target="_blank" rel="noopener">View Booking Page</a>
           <a class="popup-btn popup-btn-gray" href="tel:18602532863">Call (860) 253-2863 Now</a>
         </div>
       </div>
@@ -1120,25 +1049,22 @@
       popup.setAttribute("aria-hidden", "true");
     }
 
-    setTimeout(() => {
-      showPopup();
-    }, 7000);
+    setTimeout(showPopup, 7000);
 
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 180) {
-        showPopup();
-      }
+      if (window.scrollY > 180) showPopup();
     });
 
     closePopup.addEventListener("click", hidePopup);
 
-    popup.addEventListener("click", (e) => {
-      if (e.target === popup) hidePopup();
+    popup.addEventListener("click", (event) => {
+      if (event.target === popup) hidePopup();
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") hidePopup();
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") hidePopup();
     });
   </script>
+
 </body>
 </html>
